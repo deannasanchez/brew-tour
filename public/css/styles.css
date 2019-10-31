@@ -1,6 +1,21 @@
 /* Dillon's Code */
+.main-div{
+    background-color: black;
+    color: #ffffff;
+}
 
+.main-title {
+    text-align: center;
+}
 
+.main-lead {
+    text-align: center;
+}
+
+.search-bar{
+    margin: 0 auto;
+    width: 50%;
+}
 
 /*  */
 
