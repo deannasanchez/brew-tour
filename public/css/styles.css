@@ -2,17 +2,24 @@
 .main-div{
     background-color: black;
     color: #ffffff;
+    background-image: url("../../../../../../Desktop/barrels.jpg");
+    background-size: 100%;
 }
 
 .main-title {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 530%;
     text-align: center;
 }
 
 .main-lead {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 150%;
     text-align: center;
 }
 
 .search-bar{
+    font-family: 'Fredericka the Great', cursive;
     margin: 0 auto;
     width: 50%;
 }
