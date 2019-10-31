@@ -7,16 +7,19 @@
 }
 
 .main-title {
-    size: 30%;
-    border: solid 5px #ffffff;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 530%;
     text-align: center;
 }
 
 .main-lead {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 150%;
     text-align: center;
 }
 
 .search-bar{
+    font-family: 'Fredericka the Great', cursive;
     margin: 0 auto;
     width: 50%;
 }
