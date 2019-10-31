@@ -1,3 +1,10 @@
+//  require
+
+var db = require("../models");
+var data = require("./seeds.json");
+
+// 
+
 // Roman's code
 
 

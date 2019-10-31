@@ -11,22 +11,22 @@ var router = require("express").Router();
 
 // index route loads view.html
 router.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "../public/blog.html"));
+  res.sendFile(path.join(__dirname, "../public/brewerysearch.html"));
 });
 
-// cms route loads cms.html
-router.get("/cms", function (req, res) {
-  res.sendFile(path.join(__dirname, "../public/cms.html"));
-});
+// // cms route loads cms.html
+// router.get("/cms", function (req, res) {
+//   res.sendFile(path.join(__dirname, "../public/cms.html"));
+// });
 
-// blog route loads blog.html
-router.get("/blog", function (req, res) {
-  res.sendFile(path.join(__dirname, "../public/blog.html"));
-});
+// // blog route loads blog.html
+// router.get("/blog", function (req, res) {
+//   res.sendFile(path.join(__dirname, "../public/blog.html"));
+// });
 
-// authors route loads author-manager.html
-router.get("/authors", function (req, res) {
-  res.sendFile(path.join(__dirname, "../public/author-manager.html"));
-});
+// // authors route loads author-manager.html
+// router.get("/authors", function (req, res) {
+//   res.sendFile(path.join(__dirname, "../public/author-manager.html"));
+// });
 
 module.exports = router;
