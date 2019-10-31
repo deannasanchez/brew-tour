@@ -2,7 +2,7 @@
 .main-div{
     background-color: black;
     color: #ffffff;
-    background-image: url("../../../../../../Desktop/barrels.jpg");
+    background-image: url(../img/barrels.jpg);
     background-size: 100%;
 }
 
