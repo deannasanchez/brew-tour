@@ -1,4 +1,10 @@
 /* Dillon's Code */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .main-div{
     background-color: black;
     color: #ffffff;
@@ -24,6 +30,15 @@
     width: 50%;
 }
 
+#map {
+    float: right;
+    height: 60%;
+    width: 65%;
+    position: relative;
+    margin-right: 2%;
+    margin-bottom: 5%;
+}
+
 /*  */
 
 /* Romans code */
@@ -32,6 +47,7 @@
     width: 25%;
     font-family: 'Fredericka the Great', cursive;
     margin-left: 2%;
+    position: absolute;
 }
 
 
