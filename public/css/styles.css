@@ -2,9 +2,13 @@
 .main-div{
     background-color: black;
     color: #ffffff;
+    background-image: url("../../../../../../Desktop/barrels.jpg");
+    background-size: 100%;
 }
 
 .main-title {
+    size: 30%;
+    border: solid 5px #ffffff;
     text-align: center;
 }
 
