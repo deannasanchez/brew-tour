@@ -9,7 +9,7 @@
 // Dee's Code
 var db = require("../models");
 
-module.exports = {
+module.exports = brewController = {
     read: function (req, res) {
         var query = {};
         if (req.query.brewery_id) {

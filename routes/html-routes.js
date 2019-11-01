@@ -8,10 +8,10 @@ var path = require("path");
 var router = require("express").Router();
 
 // Each of the below routes just handles the HTML page that the user gets sent to.
-
+var dee = require("../public/brewerySearch.html")
 // index route loads view.html
 router.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "../public/brewerysearch.html"));
+  res.sendFile(path.join(__dirname, "../public/brewerySearch.html"));
 });
 
 // // cms route loads cms.html

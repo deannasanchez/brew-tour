@@ -4,7 +4,7 @@
 
 // Dependencies
 // =============================================================
-var { brewinfoController } = require("../../controllers");
+var brewinfoController  = require("../../controllers/brewinfo-controller");
 var router = require("express").Router();
 
 // Routes
