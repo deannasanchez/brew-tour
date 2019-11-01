@@ -20,7 +20,7 @@ app.use(express.static("app/public"));
 
 // Routes
 // =============================================================
-// require("./routes/api/index")(app);
+app.use(require("./routes"))
 
 // Starts the server to begin listening
 // =============================================================
