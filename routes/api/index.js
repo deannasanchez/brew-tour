@@ -1,6 +1,6 @@
 var router = require("express").Router();
 
-const postRoutes = require("./post-routes");
-router.use("/posts", postRoutes);
+const brewinfoRoutes = require("./brewinfo-routes");
+router.use("/posts", brewinfoRoutes);
 
 module.exports = router;

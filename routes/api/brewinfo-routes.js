@@ -4,24 +4,24 @@
 
 // Dependencies
 // =============================================================
-var { postController } = require("../../controllers");
+var { brewinfoController } = require("../../controllers");
 var router = require("express").Router();
 
 // Routes
 // =============================================================
 
 router.route("/")
-  // method: GET route: /api/posts
-  .get(postController.read)
-  // method: POST route: /api/posts
-  .post(postController.create)
-  // method: PUT route: /api/posts
-  .put(postController.update);
+  // method: GET route: /api/brewinfos
+  .get(brewinfoController.read)
+  // method: brewinfo route: /api/brewinfos
+  .post(brewinfoController.create)
+  // method: PUT route: /api/brewinfos
+  .put(brewinfoController.update);
 
 router.route("/:id")
-  // method: GET route: /api/posts/:id
-  .get(postController.readById)
-  // method: DELETE route: /api/posts/:id
-  .delete(postController.delete);
+  // method: GET route: /api/brewinfos/:id
+  .get(brewinfoController.readById)
+  // method: DELETE route: /api/brewinfos/:id
+  .delete(brewinfoController.delete);
 
 module.exports = router;
