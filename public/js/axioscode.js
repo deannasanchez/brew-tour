@@ -11,40 +11,41 @@ function runScript(e) {
 }
 runScript();
 
-$("user-search").runScript(function(){
-    $.ajax({url: "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries", success: function(result){
-      $("brewery-list").html(result);
-      req.query({
-        "by_state": $("user-search"),
-        "by_name": $("user-search"),
-        "by_tag": $("user-search"),
-        "by_type":$("user-search")
-      });
-      
-      req.headers({
-        "x-rapidapi-host": "brianiswu-open-brewery-db-v1.p.rapidapi.com",
-        "x-rapidapi-key": "4c2c648dcfmsh26fbd934be4b150p1a0be1jsn56e7feae726d"
-      });
-      
-    }});
-  });
+var search = $(".user-search")
+var queryURL = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?" + search;
 
-  
-
-
-// axios
-//     .get("https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries")
-//     .then(function (res) {
-//         console.log(res.data);
-//     });
-
-const req = unirest("GET", "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries");
-
-
-
-req.end(function (res) {
-	if (res.error) throw new Error(res.error);
-
-	console.log(res.body);
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function(response) {
+  console.log(response);
+  console.log(response.Runtime);
 });
+
+
+
+// var unirest = require("unirest");
+
+// var req = unirest("GET", "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries");
+
+// req.query({
+// 	"by_state": "NY",
+// 	"by_name": "cooper",
+// 	"by_tag": "patio",
+// 	"by_type": "micro"
+// });
+
+// req.headers({
+// 	"x-rapidapi-host": "brianiswu-open-brewery-db-v1.p.rapidapi.com",
+// 	"x-rapidapi-key": "4c2c648dcfmsh26fbd934be4b150p1a0be1jsn56e7feae726d"
+// });
+
+
+// req.end(function (res) {
+// 	if (res.error) throw new Error(res.error);
+
+// 	console.log(res.body);
+// });
+
+
 
