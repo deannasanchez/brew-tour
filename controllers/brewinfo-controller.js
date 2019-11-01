@@ -18,50 +18,50 @@ module.exports = {
         // Here we add an "include" property to our options in our findAll query
         // We set the value to an array of the models we want to include in a left outer join
         // In this case, just db.Author
-        db.Post.findAll({
+        db.breweryinfo.findAll({
             where: query,
             include: [db.Brewery]
-        }).then(function (dbPost) {
-            res.json(dbPost);
+        }).then(function (dbbrweryinfo) {
+            res.json(dbbrweryinfo);
         });
     },
     readById: function (req, res) {
         // Here we add an "include" property to our options in our findOne query
         // We set the value to an array of the models we want to include in a left outer join
         // In this case, just db.Author
-        db.Post.findOne({
+        db.breweryinfo.findOne({
             where: {
                 id: req.params.id
             },
-            include: [db.Author]
-        }).then(function (dbPost) {
-            res.json(dbPost);
+            include: [db.breweries]
+        }).then(function (dbbreweryinfo) {
+            res.json(dbbreweryinfo);
         });
     },
     create: function (req, res) {
-        db.Post.create(req.body).then(function (dbPost) {
-            res.json(dbPost);
+        db.breweryinfo.create(req.body).then(function (dbbreweryinfo) {
+            res.json(dbbreweryinfo);
         });
     },
     update: function (req, res) {
-        db.Post.update(
+        db.breweryinfo.update(
             req.body,
             {
                 where: {
                     id: req.body.id
                 }
             }
-        ).then(function (dbPost) {
-            res.json(dbPost);
+        ).then(function (dbbreweryinfo) {
+            res.json(dbbreweryinfo);
         });
     },
     delete: function (req, res) {
-        db.Post.destroy({
+        db.breweryinfo.destroy({
             where: {
                 id: req.params.id
             }
-        }).then(function (dbPost) {
-            res.json(dbPost);
+        }).then(function (dbbreweryinfo) {
+            res.json(dbbreweryinfo);
         });
     }
 }
