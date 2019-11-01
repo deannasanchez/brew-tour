@@ -31,11 +31,15 @@ function initMap() {
     // gmarkers.push(marker)
 }
 
-
-console.log(initMap);
-
-
-// 
+function deletePost(id) {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/posts/" + id
+    })
+      .then(function() {
+        getPosts(postCategorySelect.val());
+      });
+  }
 
 //  Joseph's Code
 
