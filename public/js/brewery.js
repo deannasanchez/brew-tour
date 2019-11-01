@@ -34,7 +34,7 @@ function initMap() {
 function deletePost(id) {
     $.ajax({
       method: "DELETE",
-      url: "/api/posts/" + id
+      url: "/api/breweries/" + id
     })
       .then(function() {
         getPosts(postCategorySelect.val());

@@ -16,12 +16,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-app.use(express.static("app/public"));
-
+app.use("/public", express.static('./public'));
 // Routes
 // =============================================================
-app.use(require("./routes"))
+// require("./routes/api/index")(app);
 
+app.use(require("./routes"))
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {
