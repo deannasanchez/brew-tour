@@ -8,7 +8,7 @@ var router = require("express").Router();
 
 // index route loads view.html
 router.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "../views/breweySearch.html"));
+  res.sendFile(path.join(__dirname, "../views/brewerySearch.html"));
 });
 
 
