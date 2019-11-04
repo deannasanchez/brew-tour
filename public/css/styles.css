@@ -30,6 +30,12 @@ html, body {
     width: 45%;
 }
 
+#user-search {
+    font-family: 'Fredericka the Great', cursive;
+    width: 80%;
+
+}
+
 #map {
     float: right;
     height: 60%;

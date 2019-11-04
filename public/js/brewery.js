@@ -16,12 +16,11 @@
 //Side bar suff
 
 function fillUpSideBar(response) {
-  var sideBar = $("#side-bar");
+  var sideBar = $("#search-results");
   sideBar.empty();
   sideBar.append("<button id = 'x'> X </button>")
-  sideBar.append("<h6> Trail Listing </<h6>")
-  for (var i = 0; i < response.trails.length; i++) {
-      var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response.trails[i].name + "<br>" + "Length: " + response.trails[i].length + " mi " + "<br>" + "Difficulty: " + response.trails[i].difficulty + "<br>" + "Summary: " + response.trails[i].summary + "<br>" + "<hr style=border: 4px solid black; />" + "</div>");
+  for (var i = 0; i < response.length; i++) {
+      var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + "<br>" + response[i].state + "<br>" + "Website" + + response[i].website_url + "</div>");
       sideBarChild.css('display', 'none');
       sideBar.append(sideBarChild);
       sideBarChild.show('slow');
@@ -55,6 +54,9 @@ $( "#user-search" ).submit(function( event ) {
   console.log(input)
   getBreweryData(input);
 });
+
+
+
 
 //  Joseph's Code
 
