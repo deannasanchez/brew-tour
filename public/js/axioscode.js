@@ -24,7 +24,7 @@ var apiUrl = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_c
       "x-rapidapi-key": "4c2c648dcfmsh26fbd934be4b150p1a0be1jsn56e7feae726d"
     }})
       .then(function (response) {
-        console.log(response[2].name);
+        console.log(response);
         //$("#search-results").append(response.forms[0].city);
       })
       // .catch(function (error) {
