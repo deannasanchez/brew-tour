@@ -10,7 +10,8 @@ var queryString = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries
   },
 }).then(
   function(response) {
-    console.log(response)
+    console.log(response.california)
+<<<<<<< HEAD
   });
 
   axios.get('/', {
@@ -35,5 +36,7 @@ var queryString = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries
   })
   .catch(function (error) {
     console.log(error);
+=======
+>>>>>>> 7b0e5cb3b5b68a50fa485a5fbc72f64ee847137b
   });
 

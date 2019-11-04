@@ -9,20 +9,20 @@
 // Dee's Code
 
 //Side bar suff
+
 function fillUpSideBar(response) {
-  var sideBar = $("#brewery-list");
+  var sideBar = $("#side-bar");
   sideBar.empty();
   sideBar.append("<button id = 'x'> X </button>")
-  sideBar.append("<h6> Breweries </<h6>")
+  sideBar.append("<h6> Trail Listing </<h6>")
   for (var i = 0; i < response.trails.length; i++) {
       var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response.trails[i].name + "<br>" + "Length: " + response.trails[i].length + " mi " + "<br>" + "Difficulty: " + response.trails[i].difficulty + "<br>" + "Summary: " + response.trails[i].summary + "<br>" + "<hr style=border: 4px solid black; />" + "</div>");
       sideBarChild.css('display', 'none');
       sideBar.append(sideBarChild);
       sideBarChild.show('slow');
   }
-}
 
- 
+}
 
 
 // 
@@ -44,14 +44,13 @@ function initMap() {
     // gmarkers.push(marker)
 }
 
-const wage = document.getElementById("brewery-search-bar");
-wage.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        validate(e);
-        console.log("this")
-    }
-});
+$(".user-input").keypress(function(event){
+  if(event.which == 13){
+    event.preventDefault();
 
+    console.log('working')
+  }
+})
 //  Joseph's Code
 
 
