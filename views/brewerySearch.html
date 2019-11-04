@@ -23,21 +23,12 @@
 			</p>
 		</div>
 	</div>
-	<div class="search-bar input-group mb-3">
-		<div class="input-group-prepend">
-			<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-				aria-haspopup="true" aria-expanded="false">Search</button>
-			<div class="dropdown-menu">
-				<a class="dropdown-name" href="#">Brewery Name</a>
-				<a class="dropdown-city" href="#">City</a>
-				<a class="dropdown-type" href="#">Type</a>
-				<!-- <div role="separator" class="dropdown-divider"></div> -->
-				<!-- <a class="dropdown-item" href="#">Separated link</a> -->
-			</div>
+	<form>
+		<div class="brewery-search">
+			<input type="email" class="form-control" id="brewery-search-bar" aria-describedby="emailHelp"
+				placeholder="Search">
 		</div>
-		<input type="text" class="user-search form-control" aria-label="Text input with dropdown button">
-	</div>
-
+	</form>
 	<!--  -->
 
 	<!-- Joseph's code -->
@@ -62,7 +53,7 @@
 		</a>
 	</div>
 
-	
+
 
 	<!--  -->
 
@@ -75,7 +66,7 @@
 	<script src="../public/js/brewery.js"></script>
 	<script src="../public/js/axioscode.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4OnWTXUjhoiJo3Lf1XrJ519_t1BFcioM&callback=initMap"
-    async defer></script>
+		async defer></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
