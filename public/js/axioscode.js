@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 
-var queryString = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_state=new_york"
+var queryString = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_name=" + {name}
  axios({
   method: "GET",
   url: queryString,
