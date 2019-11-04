@@ -1,3 +1,8 @@
+// require
+// const getData = require("./axioscode")
+
+// 
+
 // Roman's code
 
 
@@ -25,7 +30,7 @@ function fillUpSideBar(response) {
 }
 
 
-// 
+
 
 // Dillon's Code
 
@@ -44,13 +49,13 @@ function initMap() {
     // gmarkers.push(marker)
 }
 
-$(".user-input").keypress(function(event){
-  if(event.which == 13){
-    event.preventDefault();
+$( "#user-search" ).submit(function( event ) {
+  event.preventDefault();
+  var input = $("#user-input").val()
+  console.log(input)
+  getBreweryData(input);
+});
 
-    console.log('working')
-  }
-})
 //  Joseph's Code
 
 
