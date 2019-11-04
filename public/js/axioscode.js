@@ -14,6 +14,10 @@ $.ajax({
 
 var apiUrl = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_city="
 
+// 
+
+
+// 
 
 
 function getBreweryData(input) {
@@ -27,6 +31,14 @@ function getBreweryData(input) {
     .then(function (response) {
       var sideBar = $("#search-results");
       sideBar.empty();
+      var obj = {
+        name: response[0].name,
+        addy: response[0].street,
+        city: response[0].city,
+        state: response[0].state,
+        web: response[0].website_url
+      }
+      $.post("/api/saved", obj)
       for (var i = 0; i < response.length; i++) {
         var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + "<br>" + response[i].state + "<br>" + "Website: " + "<a href=" + response[i].website_url + ">" + response[i].website_url + "</a>" + "<br>" + "<button id = 'save-button'> Save </button>" + "</div> <br>");
         sideBarChild.css('display', 'none');
@@ -39,7 +51,7 @@ function getBreweryData(input) {
             map: map,
             // icon: "./img/beer.png"
         });
-        gmarkers.push(tMarker)
+        // gmarkers.push(tMarker)
       }
       
 
