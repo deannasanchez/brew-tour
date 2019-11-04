@@ -29,7 +29,17 @@ function fillUpSideBar(response) {
 
 }
 
+$("#save-button").on("click", function(event) {
+  event.preventDefault();
 
+  // Make a newChirp object
+  var newChirp = {
+    author: $("#author").val().trim(),
+    body: $("#chirp-box").val().trim(),
+    created_at: moment().format("YYYY-MM-DD HH:mm:ss")
+  };
+
+  console.log(newChirp);
 
 
 // Dillon's Code
