@@ -1,27 +1,39 @@
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
+var Brew = require("../../models/post");
 
-// Dependencies
-// =============================================================
-var { postController } = require("../../controllers");
-var router = require("express").Router();
 
 // Routes
 // =============================================================
+module.exports = function(app) {
 
-router.route("/")
-  // method: GET route: /api/posts
-  .get(postController.read)
-  // method: POST route: /api/posts
-  .post(postController.create)
-  // method: PUT route: /api/posts
-  .put(postController.update);
+  // Get all chirps
+  app.get("/api/all", function(req, res) {
 
-router.route("/:id")
-  // method: GET route: /api/posts/:id
-  .get(postController.readById)
-  // method: DELETE route: /api/posts/:id
-  .delete(postController.delete);
+    // Finding all Chirps, and then returning them to the user as JSON.
+    // Sequelize queries are asynchronous, which helps with perceived speed.
+    // If we want something to be guaranteed to happen after the query, we'll use
+    // the .then function
+    Brew.findAll({}).then(function(results) {
+      // results are available to us inside the .then
+      res.json(results);
+    });
 
-module.exports = router;
+  });
+
+  // Add a Brew
+  app.post("/api/new", function(req, res) {
+
+    console.log("Brew Data:");
+    console.log(req.body);
+
+    Brew.create({
+      author: req.body.author,
+      body: req.body.body,
+      created_at: req.body.created_at
+    }).then(function(results) {
+      // `results` here would be the newly created chirp
+      res.end();
+    });
+
+  });
+
+};
