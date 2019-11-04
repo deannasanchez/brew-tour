@@ -1,7 +1,8 @@
 const axios = require("axios");
 
+var breweryName;
 
-var queryString = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_name=" + {name}
+var queryString = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_name=" + name
  axios({
   method: "GET",
   url: queryString,
@@ -11,8 +12,7 @@ var queryString = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries
   },
 }).then(
   function(response) {
-    console.log(response.california)
-<<<<<<< HEAD
+    console.log(response.name)
   });
 
   axios.get('/', {
@@ -37,7 +37,11 @@ var queryString = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries
   })
   .catch(function (error) {
     console.log(error);
-=======
->>>>>>> 7b0e5cb3b5b68a50fa485a5fbc72f64ee847137b
   });
 
+  // for (var i = 0; i < response.length; i++) {
+  //   //Adding Locations of breweries brewMarkers array
+  //   brewMarkers.push(response.result.breweries[i].name);
+  // function brewerydiv(i){
+
+  // }
