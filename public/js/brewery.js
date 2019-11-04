@@ -31,11 +31,15 @@ function initMap() {
     // gmarkers.push(marker)
 }
 
-
-console.log(initMap);
-
-
-// 
+function deletePost(id) {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/breweries/" + id
+    })
+      .then(function() {
+        getPosts(postCategorySelect.val());
+      });
+  }
 
 //  Joseph's Code
 

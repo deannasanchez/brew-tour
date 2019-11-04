@@ -8,10 +8,9 @@ var path = require("path");
 var router = require("express").Router();
 
 // Each of the below routes just handles the HTML page that the user gets sent to.
-
 // index route loads view.html
 router.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "../public/brewerysearch.html"));
+  res.sendFile(path.join(__dirname, "../views/brewerySearch.html"));
 });
 
 // // cms route loads cms.html
@@ -19,9 +18,9 @@ router.get("/", function (req, res) {
 //   res.sendFile(path.join(__dirname, "../public/cms.html"));
 // });
 
-// // blog route loads blog.html
-// router.get("/blog", function (req, res) {
-//   res.sendFile(path.join(__dirname, "../public/blog.html"));
+// blog route loads blog.html
+// router.get("/b", function (req, res) {
+//   res.sendFile(path.join(__dirname, "../public/brewerySearch.html"));
 // });
 
 // // authors route loads author-manager.html

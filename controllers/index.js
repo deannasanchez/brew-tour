@@ -16,6 +16,10 @@
 
 // Dillon's Code
 
+module.exports = {
+    authorController: require("./author-controller"),
+    postController: require("./brewinfo-controller")
+}
 
 
 
