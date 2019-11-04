@@ -27,8 +27,11 @@
 		<div class="input-group-prepend">
 			<span class="input-group-text" id="inputGroup-sizing-default">Search</span>
 		</div>
-		<input type="text" class="user-input form-control" aria-label="Sizing example input"
+		<form id="user-search">
+		<input id="user-input" type="text" class="user-input form-control" aria-label="Sizing example input"
 			aria-describedby="inputGroup-sizing-default">
+		</form>
+			
 	</div>
 	<!--  -->
 
@@ -50,6 +53,7 @@
 		<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
 			<div class="d-flex w-100 justify-content-between" >
 				<h5 class="mb-1">Breweries</h5>
+				<ol id="search-results"></ol>
 			</div>
 		</a>
 	</div>
@@ -64,13 +68,10 @@
 	<!-- MAP -->
 
 	<!-- SCRIPT -->
-	<script src="../public/js/brewery.js"></script>
 	<script src="../public/js/axioscode.js"></script>
+	<script src="../public/js/brewery.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4OnWTXUjhoiJo3Lf1XrJ519_t1BFcioM&callback=initMap"
 		async defer></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
 		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
 		crossorigin="anonymous"></script>
