@@ -31,14 +31,13 @@ function initMap() {
     // gmarkers.push(marker)
 }
 
-const wage = document.getElementById("brewery-search-bar");
-wage.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        validate(e);
-        console.log("this")
-    }
-});
+$(".user-input").keypress(function(event){
+  if(event.which == 13){
+    event.preventDefault();
 
+    console.log('working')
+  }
+})
 //  Joseph's Code
 
 

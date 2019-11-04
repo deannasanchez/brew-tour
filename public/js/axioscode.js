@@ -11,6 +11,6 @@ var queryString = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries
   },
 }).then(
   function(response) {
-    console.log(response)
+    console.log(response.california)
   });
 
