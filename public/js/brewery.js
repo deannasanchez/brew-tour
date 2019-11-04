@@ -36,6 +36,7 @@ function fillUpSideBar(response) {
 var latitude = 33.6461
 var longitute = -117.8425
 
+var gmarkers = [];
 // Initialize and add the map
 function initMap() {
     // The location of Uluru
@@ -46,6 +47,7 @@ function initMap() {
     // The marker, positioned at Uluru
     var marker = new google.maps.Marker({ position: uluru, map: map });
     // gmarkers.push(marker)
+    map.setZoom(11);
 }
 
 $( "#user-search" ).submit(function( event ) {
