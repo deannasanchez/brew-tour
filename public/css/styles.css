@@ -24,10 +24,10 @@ html, body {
     text-align: center;
 }
 
-.search-bar{
+.brewery-search{
     font-family: 'Fredericka the Great', cursive;
     margin: 0 auto;
-    width: 50%;
+    width: 45%;
 }
 
 #map {
@@ -37,6 +37,7 @@ html, body {
     position: relative;
     margin-right: 2%;
     margin-bottom: 5%;
+    margin-top: 2%;
 }
 
 /*  */
@@ -46,6 +47,7 @@ html, body {
 .list-group{
     width: 25%;
     font-family: 'Fredericka the Great', cursive;
+    margin-top: 2%;
     margin-left: 2%;
     position: absolute;
 }
