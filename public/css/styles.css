@@ -30,10 +30,6 @@ html, body {
     width: 45%;
 }
 
-.brewery-search-button{
-    font-family: 'Fredericka the Great', cursive;
-}
-
 #map {
     float: right;
     height: 60%;
