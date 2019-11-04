@@ -8,6 +8,19 @@
 
 // Dee's Code
 
+//Side bar suff
+function fillUpSideBar(response) {
+  var sideBar = $("#brewery-list");
+  sideBar.empty();
+  sideBar.append("<button id = 'x'> X </button>")
+  sideBar.append("<h6> Breweries </<h6>")
+  for (var i = 0; i < response.trails.length; i++) {
+      var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response.trails[i].name + "<br>" + "Length: " + response.trails[i].length + " mi " + "<br>" + "Difficulty: " + response.trails[i].difficulty + "<br>" + "Summary: " + response.trails[i].summary + "<br>" + "<hr style=border: 4px solid black; />" + "</div>");
+      sideBarChild.css('display', 'none');
+      sideBar.append(sideBarChild);
+      sideBarChild.show('slow');
+  }
+}
 
 
 
