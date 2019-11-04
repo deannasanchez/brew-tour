@@ -1,4 +1,3 @@
-
 var queryString = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_state=California"
 $.ajax({
   method: "GET",
@@ -33,7 +32,18 @@ function getBreweryData(input) {
         sideBarChild.css('display', 'none');
         sideBar.append(sideBarChild);
         sideBarChild.show('slow');
+        /////////////////////
+        var tLocaton = new google.maps.LatLng(parseFloat(response[i].latitude), parseFloat(response[i].longitude));
+        var tMarker = new google.maps.Marker({
+            position: tLocaton,
+            map: map,
+            // icon: "./img/beer.png"
+        });
+        gmarkers.push(tMarker)
       }
+      
+
+
       // for (var i = 0; i < response.length; i++) {
       //   console.log(response[i].name);
       //   //$("#search-results").append(response.forms[0].city);
@@ -67,4 +77,3 @@ function getBreweryData(input) {
   // .catch(function (error) {
   //   console.log(error);
   // });
-
