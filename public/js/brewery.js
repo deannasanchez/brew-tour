@@ -16,12 +16,11 @@
 //Side bar suff
 
 function fillUpSideBar(response) {
-  var sideBar = $("#side-bar");
+  var sideBar = $("#search-results");
   sideBar.empty();
   sideBar.append("<button id = 'x'> X </button>")
-  sideBar.append("<h6> Trail Listing </<h6>")
-  for (var i = 0; i < response.trails.length; i++) {
-      var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response.trails[i].name + "<br>" + "Length: " + response.trails[i].length + " mi " + "<br>" + "Difficulty: " + response.trails[i].difficulty + "<br>" + "Summary: " + response.trails[i].summary + "<br>" + "<hr style=border: 4px solid black; />" + "</div>");
+  for (var i = 0; i < response.length; i++) {
+      var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + "<br>" + response[i].state + "<br>" + "Website" + + response[i].website_url + "</div>");
       sideBarChild.css('display', 'none');
       sideBar.append(sideBarChild);
       sideBarChild.show('slow'); 
@@ -29,17 +28,17 @@ function fillUpSideBar(response) {
 
 }
 
-$("#save-button").on("click", function(event) {
-  event.preventDefault();
+// $("#save-button").on("click", function(event) {
+//   event.preventDefault();
 
-  // Make a newChirp object
-  var newChirp = {
-    author: $("#author").val().trim(),
-    body: $("#chirp-box").val().trim(),
-    created_at: moment().format("YYYY-MM-DD HH:mm:ss")
-  };
+//   // Make a newChirp object
+//   var newChirp = {
+//     author: $("#author").val().trim(),
+//     body: $("#chirp-box").val().trim(),
+//     created_at: moment().format("YYYY-MM-DD HH:mm:ss")
+//   };
 
-  console.log(newChirp);
+//   console.log(newChirp);
 
 
 // Dillon's Code
@@ -47,6 +46,7 @@ $("#save-button").on("click", function(event) {
 var latitude = 33.6461
 var longitute = -117.8425
 
+var gmarkers = [];
 // Initialize and add the map
 function initMap() {
     // The location of Uluru
@@ -57,6 +57,7 @@ function initMap() {
     // The marker, positioned at Uluru
     var marker = new google.maps.Marker({ position: uluru, map: map });
     // gmarkers.push(marker)
+    map.setZoom(11);
 }
 
 $( "#user-search" ).submit(function( event ) {
@@ -66,6 +67,9 @@ $( "#user-search" ).submit(function( event ) {
   getBreweryData(input);
 });
 
+
+
+
 //  Joseph's Code
 
 
@@ -74,4 +78,3 @@ $( "#user-search" ).submit(function( event ) {
 
 
 
-// 

@@ -1,4 +1,4 @@
-var Brew = require("../../models/post");
+var Brew = require("../../models");
 
 
 // Routes
@@ -20,19 +20,20 @@ module.exports = function(app) {
   });
 
   // Add a Brew
-  app.post("/api/new", function(req, res) {
+  app.post("/api/saved", function(req, res) {
 
-    console.log("Brew Data:");
+    console.log("Saved Breweries:");
     console.log(req.body);
+    
 
-    Brew.create({
-      author: req.body.author,
-      body: req.body.body,
-      created_at: req.body.created_at
-    }).then(function(results) {
-      // `results` here would be the newly created chirp
-      res.end();
-    });
+    // Brew.create({
+    //   name: req.body.author,
+    //   body: req.body.body,
+    //   created_at: req.body.created_at
+    // }).then(function(results) {
+    //   // `results` here would be the newly created chirp
+    //   res.end();
+    // });
 
   });
 
