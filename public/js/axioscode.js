@@ -12,37 +12,40 @@ $.ajax({
   });
 
 
-var apiUrl = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_city=" 
-var gmarkers = [];
+var apiUrl = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_city="
 
 
-  function getBreweryData(input) {
-    $.ajax(apiUrl + input, {method:"GET",
+
+function getBreweryData(input) {
+  $.ajax(apiUrl + input, {
+    method: "GET",
     headers: {
       "x-rapidapi-host": "brianiswu-open-brewery-db-v1.p.rapidapi.com",
       "x-rapidapi-key": "4c2c648dcfmsh26fbd934be4b150p1a0be1jsn56e7feae726d"
-    }})
-      .then(function (response) {
-        for(var i = 0; i < response.length; i++){
-            console.log(response[i].name);
-            ///////////////////////////////
-            var sideBar = $("#search-results");
-            sideBar.empty();
-            sideBar.append("<button id = 'x'> X </button>")
-            sideBar.append("<h6> Trail Listing </<h6>")
-            var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Length: " + response[i].name.length + " mi " + "<br>" + "Difficulty: " + response[i].state + "<br>" + "Summary: " + response[i].city + "<br>" + "<hr style=border: 4px solid black; />" + "</div>");
-            sideBarChild.css('display', 'none');
-            sideBar.append(sideBarChild);
-            sideBarChild.show('slow');
-            console.log(response)
-        }
-      })
+    }
+  })
+    .then(function (response) {
+      var sideBar = $("#search-results");
+      sideBar.empty();
+      for (var i = 0; i < response.length; i++) {
+        var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + "<br>" + response[i].state + "<br>" + "Website: " + "<a href=" + response[i].website_url + ">" + response[i].website_url + "</a>" + "</div> <br>");
+        sideBarChild.css('display', 'none');
+        sideBar.append(sideBarChild);
+        sideBarChild.show('slow');
+      }
+      // for (var i = 0; i < response.length; i++) {
+      //   console.log(response[i].name);
+      //   //$("#search-results").append(response.forms[0].city);
+      // }
       // .catch(function (error) {
       //   return error
       // });
-  }
+    }
+    )
+}
 
-  
+
+
   // axios.get('/', {
   //   params: {
   //     id: 299,
