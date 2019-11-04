@@ -9,7 +9,7 @@
 // Dee's Code
 
 
- 
+
 
 
 // 
@@ -29,16 +29,6 @@ function initMap() {
     // The marker, positioned at Uluru
     var marker = new google.maps.Marker({ position: uluru, map: map });
     // gmarkers.push(marker)
-<<<<<<< HEAD
-} 
-
-
-$(".user-input").keypress(function(event){
-  if(event.which == 13){
-    event.preventDefault(); 
-
-    console.log('working') 
-=======
 }
 
 $(".user-input").keypress(function(event){
@@ -46,7 +36,6 @@ $(".user-input").keypress(function(event){
     event.preventDefault();
 
     console.log('working')
->>>>>>> 7b0e5cb3b5b68a50fa485a5fbc72f64ee847137b
   }
 })
 //  Joseph's Code
