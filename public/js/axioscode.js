@@ -39,11 +39,18 @@ function getBreweryData(input) {
         web: response[0].website_url
       }
       console.log(obj)
-      $.post("/api/saved", obj)
-      for (var i = 0; i < response.length; i++) {
-        var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + "<br>" + response[i].state + "<br>" + "Website: " + "<a href=" + response[i].website_url + ">" + response[i].website_url + "</a>" + "<br>" + "<button id = 'save-button'> Save </button>" + "</div> <br>");
+      for (let i = 0; i < response.length; i++) {
+        const brewery = response[i];
+        var sideBarChild = $("<li class='list-group-item d-flex justify-content-between align-items-center'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + "<br>" + response[i].state + "<br>" + "<a href=" + response[i].website_url + ">" + response[i].website_url + "</a><br></li>");
+        var button = $("<button class='save-button' data.> Save </button>");
+        button.click(function (event) {
+          event.preventDefault();
+          console.log(brewery);
+        });
+        sideBarChild.append(button);
+        var br = $("<br>")
         sideBarChild.css('display', 'none');
-        sideBar.append(sideBarChild);
+        sideBar.append(sideBarChild, br);
         sideBarChild.show('slow');
         /////////////////////
         // Add markers to locations
