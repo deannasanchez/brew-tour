@@ -1,0 +1,79 @@
+/* Dillon's Code */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-div{
+    background-color: black;
+    color: #ffffff;
+    background-image: url(../img/barrels.jpg);
+    background-size: 100%;
+}
+
+.main-title {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 530%;
+    text-align: center;
+}
+
+.main-lead {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 150%;
+    text-align: center;
+}
+
+.brewery-search{
+    font-family: 'Fredericka the Great', cursive;
+    margin: 0 auto;
+    width: 45%;
+}
+
+#user-search {
+    font-family: 'Fredericka the Great', cursive;
+    width: 80%;
+
+}
+
+#map {
+    float: right;
+    height: 60%;
+    width: 65%;
+    position: relative;
+    margin-right: 2%;
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+
+/*  */
+
+/* Romans code */
+
+.list-group{
+    width: 25%;
+    font-family: 'Fredericka the Great', cursive;
+    margin-top: 2%;
+    margin-left: 2%;
+    position: absolute;
+}
+
+
+
+/*  */
+
+/* Joesphs code */
+
+
+
+
+
+/*  */
+
+/* Dee's code */
+
+
+
+
+
+/*  */
