@@ -16,10 +16,29 @@
 //Side bar suff
 
 function fillUpSideBar(response) {
+  var sideBar = $("#search-results");
+  sideBar.empty();
+  sideBar.append("<button id = 'x'> X </button>")
+  for (var i = 0; i < response.length; i++) {
+      var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + "<br>" + response[i].state + "<br>" + "Website" + + response[i].website_url + "</div>");
+      sideBarChild.css('display', 'none');
+      sideBar.append(sideBarChild);
+      sideBarChild.show('slow'); 
+  }
 
 }
 
+// $("#save-button").on("click", function(event) {
+//   event.preventDefault();
 
+//   // Make a newChirp object
+//   var newChirp = {
+//     author: $("#author").val().trim(),
+//     body: $("#chirp-box").val().trim(),
+//     created_at: moment().format("YYYY-MM-DD HH:mm:ss")
+//   };
+
+//   console.log(newChirp);
 
 
 // Dillon's Code
@@ -57,4 +76,3 @@ $( "#user-search" ).submit(function( event ) {
 
 
 
-// 
