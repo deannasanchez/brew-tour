@@ -39,6 +39,10 @@ function getBreweryData(input) {
         web: response[0].website_url
       }
       console.log(obj)
+
+      var lat = 0
+      var lon = 0
+
       for (let i = 0; i < response.length; i++) {
         const brewery = response[i];
         var sideBarChild = $("<li class='list-group-item d-flex justify-content-between align-items-center'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + "<br>" + response[i].state + "<br>" + "<a href=" + response[i].website_url + ">" + response[i].website_url + "</a><br></li>");
@@ -74,15 +78,26 @@ function getBreweryData(input) {
                 infowindow.close(map, tMarker);
             });
           });
-      })(tMarker, i);
+        })(tMarker, i);
+        lat += parseInt((response[i].latitude)).toFixed(0); 
+        lon += parseInt((response[i].longitude)).toFixed(0);
+        //console.log(lat);
+        console.log(lon);
       }  
         //moves map to area
-        var center = new google.maps.LatLng(response[0].latitude, response[0].longitude);
+        // console.log(lat);
+        // console.log(lon);
+        let avgLat = lat / response.length;
+        let avgLon = lon / response.length;
+        //console.log(avgLat);
+        console.log(avgLon);
+        var center = new google.maps.LatLng(avgLat, "-" + avgLon);
         map.setZoom(11);
         map.panTo(center);
         marker = new google.maps.Marker({
             position: center,
-            map: map
+            map: map,
+            icon: "/public/img/beer.png"
         });
     })
 }
