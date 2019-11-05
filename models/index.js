@@ -1,20 +1,3 @@
-// Roman's code
-
-
-
-
-// 
-
-
-// Dee's Code
-
-
-
-
-
-// 
-
-// Dillon's Code
 "use strict";
 
 var fs = require("fs");
@@ -33,15 +16,15 @@ if (config.use_env_variable) {
 
 fs
   .readdirSync(__dirname)
-  .filter(function(file) {
+  .filter(function (file) {
     return (file.indexOf(".") !== 0) && (file !== basename) && (file.slice(-3) === ".js");
   })
-  .forEach(function(file) {
+  .forEach(function (file) {
     var model = sequelize.import(path.join(__dirname, file));
     db[model.name] = model;
   });
 
-Object.keys(db).forEach(function(modelName) {
+Object.keys(db).forEach(function (modelName) {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
@@ -51,19 +34,3 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
-
-
-
-
-
-// 
-
-//  Joseph's Code
-
-
-
-
-
-
-
-// 
