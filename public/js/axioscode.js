@@ -53,6 +53,21 @@ function getBreweryData(input) {
             map: map,
             icon: "/public/img/beer.png"
         });
+        // Info window
+        (function (tMarker, i) {
+          google.maps.event.addListener(tMarker, 'mouseover', function () {
+            infowindow = new google.maps.InfoWindow({
+                content: "<div class=zIndexUp>" + response[i].name + "</div>" + "<br>" +
+                    "<div>" + "City: " + response[i].city + "<br>" + "State: " + response[i].state + "<br>" + 
+                    "Website: " + response[i].website_url + "</div>" + "<br>"
+            });
+            infowindow.open(map, tMarker);
+
+            google.maps.event.addListener(tMarker, 'mouseout', function () {
+                infowindow.close(map, tMarker);
+            });
+          });
+      })(tMarker, i);
       }  
         //moves map to area
         var center = new google.maps.LatLng(response[0].latitude, response[0].longitude);
