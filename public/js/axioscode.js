@@ -39,9 +39,8 @@ function getBreweryData(input) {
         web: response[0].website_url
       }
       console.log(obj)
-      $.post("/api/saved", obj)
       for (var i = 0; i < response.length; i++) {
-        var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + "<br>" + response[i].state + "<br>" + "Website: " + "<a href=" + response[i].website_url + ">" + response[i].website_url + "</a>" + "<br>" + "<button id = 'save-button'> Save </button>" + "</div> <br>");
+        var sideBarChild = $("<li class='list-group-item d-flex justify-content-between align-items-center'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + "<br>" + response[i].state + "<br>" + "<a href=" + response[i].website_url + ">" + response[i].website_url + "</a>" + "<br>" + "<button id='save-button'> Save </button>" + "</li> <br>");
         sideBarChild.css('display', 'none');
         sideBar.append(sideBarChild);
         sideBarChild.show('slow');

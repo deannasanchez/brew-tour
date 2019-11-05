@@ -5,7 +5,10 @@
 
 // Roman's code
 
-
+$("#save-button").on("click", function(event) {
+event.preventDefault();
+alert("Added")
+});
 
 
 // 
@@ -15,18 +18,7 @@
 
 //Side bar suff
 
-function fillUpSideBar(response) {
-  var sideBar = $("#search-results");
-  sideBar.empty();
-  sideBar.append("<button id = 'x'> X </button>")
-  for (var i = 0; i < response.length; i++) {
-      var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + "<br>" + response[i].state + "<br>" + "Website" + + response[i].website_url + "</div>");
-      sideBarChild.css('display', 'none');
-      sideBar.append(sideBarChild);
-      sideBarChild.show('slow'); 
-  }
 
-}
 
 // $("#save-button").on("click", function(event) {
 //   event.preventDefault();
