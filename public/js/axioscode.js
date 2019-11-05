@@ -79,19 +79,9 @@ function getBreweryData(input) {
             });
           });
         })(tMarker, i);
-        lat += parseInt((response[i].latitude)).toFixed(0); 
-        lon += parseInt((response[i].longitude)).toFixed(0);
-        //console.log(lat);
-        console.log(lon);
       }  
         //moves map to area
-        // console.log(lat);
-        // console.log(lon);
-        let avgLat = lat / response.length;
-        let avgLon = lon / response.length;
-        //console.log(avgLat);
-        console.log(avgLon);
-        var center = new google.maps.LatLng(avgLat, "-" + avgLon);
+        var center = new google.maps.LatLng((response[1].latitude), response[1].longitude);
         map.setZoom(11);
         map.panTo(center);
         marker = new google.maps.Marker({
