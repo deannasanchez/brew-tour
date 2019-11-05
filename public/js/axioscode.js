@@ -37,7 +37,7 @@ function getBreweryData(input) {
       console.log(obj)
       $.post("/api/saved", obj)
       for (var i = 0; i < response.length; i++) {
-        var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + "<br>" + response[i].state + "<br>" + "Website: " + "<a href=" + response[i].website_url + ">" + response[i].website_url + "</a>" + "</div> <br>");
+        var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + ", " + response[i].state + "<br>" + "Website: " + "<a href=" + response[i].website_url + ">" + response[i].website_url + "</a>" + "</div> <br>");
         sideBarChild.css('display', 'none');
         sideBar.append(sideBarChild);
         sideBarChild.show('slow');
@@ -45,20 +45,22 @@ function getBreweryData(input) {
         // Add markers to locations
         var tLocaton = new google.maps.LatLng(parseFloat(response[i].latitude), parseFloat(response[i].longitude));
         var tMarker = new google.maps.Marker({
-          position: tLocaton,
-          map: map,
-          //icon: "img/beer.png"
+            position: tLocaton,
+            map: map,
+            icon: "/public/img/beer.png"
         });
         gmarkers.push(tMarker)
-      }
-      //moves map to area
-      var center = new google.maps.LatLng(response[0].latitude, response[0].longitude);
-      map.setZoom(11);
-      map.panTo(center);
-      marker = new google.maps.Marker({
-        position: center,
-        map: map
-      })
+      }  
+        //moves map to area
+        var center = new google.maps.LatLng(response[0].latitude, response[0].longitude);
+        map.setZoom(11);
+        map.panTo(center);
+        marker = new google.maps.Marker({
+            position: center,
+            map: map
+        });
     })
 }
+      
+
 
