@@ -38,7 +38,7 @@ function getBreweryData(input) {
         var tMarker = new google.maps.Marker({
             position: tLocaton,
             map: map,
-            //icon: "img/beer.png"
+            icon: "beer.png"
         });
         gmarkers.push(tMarker)
       }  
