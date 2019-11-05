@@ -13,6 +13,11 @@ router.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "../views/brewerySearch.html"));
 });
 
+
+router.get("/saved", function (req, res) {
+  res.sendFile(path.join(__dirname, "../views/savedbreweries.html"));
+});
+
 // // cms route loads cms.html
 // router.get("/cms", function (req, res) {
 //   res.sendFile(path.join(__dirname, "../public/cms.html"));
