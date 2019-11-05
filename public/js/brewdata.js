@@ -16,7 +16,7 @@ $(document).ready(function() {
   
   
     // This function grabs posts from the database and updates the view
-    function getBreweryInfo(author) {
+    function getBreweryInfo(breweryId) {
       breweryId = breweries || "";
       if (breweryId) {
         breweryId = "/?breweries_id=" + breweryId;
@@ -71,4 +71,7 @@ $(document).ready(function() {
     }
   
   });
+
+
+  
   
