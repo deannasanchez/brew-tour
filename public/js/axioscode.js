@@ -27,6 +27,15 @@ function getBreweryData(input) {
     .then(function (response) {
       var sideBar = $("#search-results");
       sideBar.empty();
+      var obj = {
+        name: response[0].name,
+        addy: response[0].street,
+        city: response[0].city,
+        state: response[0].state,
+        web: response[0].website_url
+      }
+      console.log(obj)
+      $.post("/api/saved", obj)
       for (var i = 0; i < response.length; i++) {
         var sideBarChild = $("<div id = 'sidebar-div'>" + (parseInt(i) + 1) + "." + " Name: " + response[i].name + "<br>" + "Address: " + response[i].street + "<br>" + response[i].city + "<br>" + response[i].state + "<br>" + "Website: " + "<a href=" + response[i].website_url + ">" + response[i].website_url + "</a>" + "</div> <br>");
         sideBarChild.css('display', 'none');
@@ -60,29 +69,4 @@ function getBreweryData(input) {
       // .catch(function (error) {
       //   return error
       // });
-    }
-    )
-}
-
-
-
-  // axios.get('/', {
-  //   params: {
-  //     id: 299,
-  //     name: "Almanac Beer Company",
-  //     brewery_type: "micro",
-  //     street: "651B W Tower Ave",
-  //     city: "input",
-  //     state: "California",
-  //     postal_code: "94501-5047",
-  //     longitude: "-122.306283180899",
-  //     latitude: "37.7834497667258",
-  //     website_url: "http://almanacbeer.com",
-  //   }
-  // })
-  // .then(function (response) {
-  //   console.log(response);
-  // })
-  // .catch(function (error) {
-  //   console.log(error);
-  // });
+  // }
