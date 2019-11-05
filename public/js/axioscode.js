@@ -42,16 +42,24 @@ function getBreweryData(input) {
         sideBar.append(sideBarChild);
         sideBarChild.show('slow');
         /////////////////////
+        // Add markers to locations
         var tLocaton = new google.maps.LatLng(parseFloat(response[i].latitude), parseFloat(response[i].longitude));
         var tMarker = new google.maps.Marker({
             position: tLocaton,
             map: map,
-            // icon: "./img/beer.png"
+            //icon: "img/beer.png"
         });
         gmarkers.push(tMarker)
-      } 
-    })
-  } 
+      }  
+        //moves map to area
+        var center = new google.maps.LatLng(response[0].latitude, response[0].longitude);
+        map.setZoom(11);
+        map.panTo(center);
+        marker = new google.maps.Marker({
+            position: center,
+            map: map
+        });
+      
 
 
       // for (var i = 0; i < response.length; i++) {
