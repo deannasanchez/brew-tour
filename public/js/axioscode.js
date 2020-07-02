@@ -14,11 +14,6 @@ $.ajax({
 
 var apiUrl = "https://brianiswu-open-brewery-db-v1.p.rapidapi.com/breweries?by_city="
 
-// 
-
-
-// 
-
 
 function getBreweryData(input) {
   $.ajax(apiUrl + input, {

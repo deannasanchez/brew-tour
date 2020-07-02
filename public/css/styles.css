@@ -13,25 +13,25 @@ html, body {
 }
 
 .main-title {
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Alegreya Sans SC', sans-serif;
     font-size: 530%;
     text-align: center;
 }
 
 .main-lead {
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 150%;
     text-align: center;
 }
 
 .brewery-search{
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Noto Sans', sans-serif;
     margin: 0 auto;
     width: 45%;
 }
 
 #user-search {
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Noto Sans', sans-serif;
     width: 80%;
 
 }
@@ -48,7 +48,7 @@ html, body {
 
 .saved-group{
     width: 80%;
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Noto Sans', sans-serif;
     margin-top: 2%;
     margin-left: 7%;
     position: absolute;
@@ -71,34 +71,12 @@ a {
 a:hover {
     color: black;
 }
-/*  */
-
-/* Romans code */
 
 .list-group{
     width: 30%;
-    font-family: 'Fredericka the Great', cursive;
+    font-family: 'Noto Sans', sans-serif;
     margin-top: 2%;
     margin-left: 2%;
     position: absolute;
 }
 
-
-
-/*  */
-
-/* Joesphs code */
-
-
-
-
-
-/*  */
-
-/* Dee's code */
-
-
-
-
-
-/*  */

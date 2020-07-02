@@ -60,11 +60,4 @@ $( "#user-search" ).submit(function( event ) {
 
 
 
-//  Joseph's Code
-
-
-
-
-
-
 
